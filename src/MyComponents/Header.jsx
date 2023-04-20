@@ -10,7 +10,9 @@ import {
   DrawerCloseButton,
   Button,
   useDisclosure,
-  Input,
+ 
+  VStack,
+  HStack,
 } from '@chakra-ui/react' 
 
 import {Link  } from "react-router-dom";
@@ -30,25 +32,54 @@ const Header = () => {
 
     <Drawer
         isOpen={isOpen}
-        placement='right'
+        placement='left'
         onClose={onClose}
         finalFocusRef={btnRef}
-        placement="left"
+        
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>VIDEO HUB</DrawerHeader>
 
           <DrawerBody>
-            <Input placeholder='Type here...' />
+
+            <VStack alignItems={'flex-start'}>
+
+            <Button variant={'ghost'} colorScheme='purple'>
+                <Link to={'/'}>Home</Link>
+            </Button>
+
+            <Button variant={'ghost'} colorScheme='purple'>
+                <Link to={'/videos'}>Videos</Link>
+            </Button>
+
+            <Button variant={'ghost'} colorScheme='purple'>
+                <Link to={'/videos?category'}>Free Videos</Link>
+            </Button>
+
+            <Button variant={'ghost'} colorScheme='purple'>
+                <Link to={'/upload'}>Upload Video</Link>
+            </Button>
+
+            </VStack>
+
+            <HStack pos={'absolute'} bottom={'10'} left={'0'} width={'full'} justifyContent={'space-evenly'}>
+
+                    <Button colorScheme='purple'>
+                        <Link > Log In</Link>
+                    </Button>
+
+                    <Button colorScheme='purple' variant={'outline'}>
+                        <Link >Sign Up</Link>
+                    </Button>
+
+            </HStack>
+
           </DrawerBody>
 
           <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme='blue'>Save</Button>
+            
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
