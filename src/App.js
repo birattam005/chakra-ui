@@ -4,6 +4,7 @@ import Header from "./MyComponents/Header";
 import Home from './MyComponents/Home';
 import Footer from './MyComponents/Footer'
 import Videos from './MyComponents/Videos';
+import Upload from './MyComponents/Upload';
 
 
 
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/videos' element={<Videos />} />
+        <Route path='/upload' element={<Upload />} />
       </Routes>
       <Footer />
     </Router>
