@@ -5,6 +5,8 @@ import Home from './MyComponents/Home';
 import Footer from './MyComponents/Footer'
 import Videos from './MyComponents/Videos';
 import Upload from './MyComponents/Upload';
+import Login from './MyComponents/Login';
+import SignUp from './MyComponents/SignUp';
 
 
 
@@ -16,6 +18,8 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/videos' element={<Videos />} />
         <Route path='/upload' element={<Upload />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
       </Routes>
       <Footer />
     </Router>
