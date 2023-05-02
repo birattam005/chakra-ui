@@ -10,32 +10,32 @@ import {
   DrawerCloseButton,
   Button,
   useDisclosure,
- 
+
   VStack,
   HStack,
-} from '@chakra-ui/react' 
+} from '@chakra-ui/react'
 
-import {Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BiMenuAltLeft } from "react-icons/bi";
 
 const Header = () => {
 
-     const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
 
 
   return (
-  <>
-    <Button zIndex={'overlay'} pos={'fixed'} top={'4'} left={'4'} colorScheme='purple' p={'0'} w={'10'} h={'10'} borderRadius={'full'} onClick={onOpen}>
-        <BiMenuAltLeft size={'20'}/>
-    </Button>
+    <>
+      <Button zIndex={'overlay'} pos={'fixed'} top={'4'} left={'4'} colorScheme='purple' p={'0'} w={'10'} h={'10'} borderRadius={'full'} onClick={onOpen}>
+        <BiMenuAltLeft size={'20'} />
+      </Button>
 
-    <Drawer
+      <Drawer
         isOpen={isOpen}
         placement='left'
         onClose={onClose}
         finalFocusRef={btnRef}
-        
+
       >
         <DrawerOverlay />
         <DrawerContent>
@@ -46,44 +46,44 @@ const Header = () => {
 
             <VStack alignItems={'flex-start'}>
 
-            <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
+              <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
                 <Link to={'/'}>Home</Link>
-            </Button>
+              </Button>
 
-            <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
+              <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
                 <Link to={'/videos'}>Videos</Link>
-            </Button>
+              </Button>
 
-            <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
+              <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
                 <Link to={'/videos?category'}>Free Videos</Link>
-            </Button>
+              </Button>
 
-            <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
+              <Button onClick={onClose} variant={'ghost'} colorScheme='purple'>
                 <Link to={'/upload'}>Upload Video</Link>
-            </Button>
+              </Button>
 
             </VStack>
 
             <HStack pos={'absolute'} bottom={'10'} left={'0'} width={'full'} justifyContent={'space-evenly'}>
 
-                    <Button onClick={onClose} colorScheme='purple'>
-                        <Link to={'/login'} > Log In</Link>
-                    </Button>
+              <Button onClick={onClose} colorScheme='purple'>
+                <Link to={'/login'} > Log In</Link>
+              </Button>
 
-                    <Button onClick={onClose} colorScheme='purple' variant={'outline'}>
-                        <Link to={'/signup'} >Sign Up</Link>
-                    </Button>
+              <Button onClick={onClose} colorScheme='purple' variant={'outline'}>
+                <Link to={'/signup'} >Sign Up</Link>
+              </Button>
 
             </HStack>
 
           </DrawerBody>
 
           <DrawerFooter>
-            
+
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-  </>
+    </>
   )
 }
 
